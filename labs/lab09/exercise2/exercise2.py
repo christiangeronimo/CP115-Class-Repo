@@ -4,29 +4,27 @@ overtime_hours = int(input())
 tax_status = input()
 
 # TODO your code here
-if  tax_status == "Single" and base_salary >= 5000:
-    tax_rate= 0.22
 
-elif tax_status == "Single" and base_salary < 5000:
-    tax_rate= 0.18
+if tax_status == "Single":
+    if base_salary >= 5000 :
+        tax_rate = 0.22
+    else:
+        tax_rate = 0.18
+elif tax_status == "Married":
+    if base_salary >= 6000:
+        tax_rate = 0.20
+    else:
+        tax_rate = 0.15
+else:
+    if base_salary >= 5500:
+        tax_rate = 0.25
+    else:
+        tax_rate = 0.19
 
-elif tax_status == "Married" and base_salary >= 6000:
-     tax_rate = 0.22
+overtime_pay = 35 * overtime_hours
+total_income = base_salary + overtime_pay
+net_salary = total_income * (1 - tax_rate) * (1 - 0.115)
 
-elif tax_status == "Married" and base_salary < 6000:
-     tax_rate = 0.15
-
-elif tax_status == "Head" and base_salary >= 5500:
-     tax_rate = 0.25
-else: 
-     tax_status == "Head" and base_salary < 5500
-     tax_rate = 0.19
-    
-
-EPF = 0.11
-SOCSO = 0.5
-net_salary = ((tax_rate + EPF + SOCSO) * base_salary) + (35 * overtime_hours) 
- 
 print(employee_name)
-print(tax_rate)
+print(f"{tax_rate * 100:.0f}%")
 print(f"{net_salary:.2f}")

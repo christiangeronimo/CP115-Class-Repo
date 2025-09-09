@@ -41,5 +41,7 @@ if show_time > 18:
 if day_type == "Weekday" and is_student == "Yes":
     final_price = final_price * 0.9
 
+
+
 print(base_price)
 print(final_price)
