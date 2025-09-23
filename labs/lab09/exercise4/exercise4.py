@@ -17,7 +17,6 @@ additional_charge = 10
 total_bill = water_cost + additional_charge
 
 
-
 print(consumption)
 print(water_cost)
 print(total_bill)
